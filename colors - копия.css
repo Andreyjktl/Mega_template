@@ -1,0 +1,130 @@
+a:link, a:visited, a:hover {
+	color: #0085c1;
+}
+a:hover {
+	color: #0085c1;
+}
+
+
+/* Form Template: Success Message */
+div.success-msg {
+	border-color: #0099cc;
+}
+
+
+/* Form Elements: .button2 */
+button.button2, span.button2-span {
+	border-color: #0087b8;
+	border-bottom-color: #0070a2;
+}
+button.button2 span, span.button2-span input {
+	border-color: #1ea7e4;
+	border-bottom-color: #008fce;
+	background: #007ab0 url(./images/button2.gif) repeat-x 0 0;
+}
+
+
+/* Form Elements: .button4 */
+button.button4, span.button4-span {
+	border-color: #0087b8;
+	border-bottom-color: #0070a2;
+}
+button.button4 span, span.button4-span input {
+	border-color: #1ea7e4;
+	border-bottom-color: #008fce;
+	background: #007ab0 url(./images/button4.gif) repeat-x 0 0;
+}
+
+
+/* Header */ /*url(./images/header.gif) repeat-x 0 0*/
+div.top-block {
+	background: #ffffff ;
+}
+
+
+/* Panel *//* url(./images/panel.gif) repeat-x 0 0 */
+div.panel {
+	background: #b9b9b9 ;
+	border-color: #bebebe;
+	border-top-color: #bebebe;
+}
+
+
+/* Menu */
+div.menu a {
+	border-color: #bebebe;
+	border-top-color: #bebebe;
+}
+
+
+/* Submenu2 */
+div.submenu2 ul li a {
+	color: #0085c1;
+}
+div.submenu2 ul li span {
+	color: #0085c1 !important;
+}
+
+
+/* Bottom Block url(./images/footer.gif) repeat-x 0 0 */
+div.bottom-block {
+	background: #e9e9e8;
+	border-top-color: #bebebe;
+	border-bottom-color: #bebebe;
+	color: #303030;
+}
+div.bottom-block div.brd {
+	border-top-color: #bebebe;
+	border-bottom-color: #bebebe;
+}
+footer div.shop {
+	border-right-color: #bebebe;
+}
+footer div.addr {
+	border-left-color: #bebebe;
+}
+
+
+/* Filter Tabs */
+div.filter div.top ul li.selected {
+	background: #0075b0 url(./images/filter-tab.gif) repeat-x 0 -30px;
+	border-color: #00689c;
+	border-bottom-color: #0075b0;
+}
+
+
+/* Filter Params */
+div.filter div.bottom {
+	border-bottom-color: #00689c;
+}
+div.filter div.bottom div.brd {
+	border-top-color: #0099cc;
+	border-bottom-color: #0099cc;
+	background: #0075b0;
+}
+div.filter div.params {
+	border-right-color: #0070a9;
+	background: #0075b0 url(./images/filter-params.gif) repeat-y 100% 0;
+}
+
+
+/* Filter Banner */
+div.filter div.banner {
+	background: #0075b0;
+	border-left-color: #0099cc;
+}
+
+
+/* Brands */
+div.brands a.lnk:hover {
+	border-color: #0099cc;
+}
+
+
+/* List Table */
+table.list tr th {
+	background: #d1dadf;
+}
+table.list tr td {
+	border-bottom-color: #d1dadf;
+}
