@@ -29,6 +29,8 @@
 
 		<div id="panel"><?$APPLICATION->ShowPanel()?></div>
 		<!-- Center -->
+		<div class="top_panel">
+		</div>
 		<div class="center">
 			<!-- Header -->
 			<header>
@@ -92,7 +94,7 @@
 						<div class="menu">
 							<ul>
 								
-								<?/*<li<?echo CSite::InDir(SITE_DIR.'tyres/')?' class="selected"':'';?>>
+								<li<?echo CSite::InDir(SITE_DIR.'tyres/')?' class="selected"':'';?>>
 									<a href="<?=SITE_DIR?>tyres/"><span><?=GetMessage("TYRES");?></span></a>
 									<?$APPLICATION->IncludeComponent(
 	"bitrix:menu", 
@@ -135,10 +137,10 @@
 	),
 	false
 );?>
-								</li>*/?>
-								<?/*<li><a href="<?=SITE_DIR?>special-offers/"><span><?=$MESS["ACTIONS"];?></span></a></li>*/?>
+								</li>
+								<?/*<li><a href="<?=SITE_DIR?>special-offers/"><span><?=$MESS["ACTIONS"];?></span></a></li>
 								<li><a href="<?=SITE_DIR?>tyres/podbor-shin.php"><span>Шины</span></a></li>
-								<li><a href="<?=SITE_DIR?>wheels/podbor-diskov.php"><span>Диски</span></a></li>
+								<li><a href="<?=SITE_DIR?>wheels/podbor-diskov.php"><span>Диски</span></a></li>*/?>
 
 								<li><a href="<?=SITE_DIR?>news/"><span>Новости</span></a></li>
 								<li><a href="<?=SITE_DIR?>articles/"><span>Статьи</span></a></li>
@@ -271,6 +273,7 @@
 				<!-- // Promo Mini -->
 				<?}?>
 
+				<?/*
 				<?
 				$APPLICATION->IncludeComponent(
 						"dvs:dvs.filter",
@@ -284,7 +287,7 @@
 						),
 				false
 				);
-				?>
+				?> */?>
 
 
 			</header>

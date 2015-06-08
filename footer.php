@@ -121,7 +121,8 @@
 				<?}?>
 			</div>
             <!-- // Content -->
-            <!-- Footer -->
+            </div>
+              <!-- Footer -->
             <footer>
                 <!-- Bottom Block -->
                 <div class="bottom-block">
@@ -131,8 +132,7 @@
 
 
 						<div class="td shop">
-							<img src="//srv56340.ht-test.ru.images.1c-bitrix-cdn.ru/upload/medialibrary/ee4/ee41aacf87a75321c14b424bf3859480.png?142899372410555" title="РњРµРіР°.РѕРЅР»Р°Р№РЅ" alt="РњРµРіР°.РѕРЅР»Р°Р№РЅ" align="top" height="38" width="92">
-							<h4><?=GetMessage("SHOP_NAME");?></h4>
+							<div class="title-bottom">О магазине</div>
 							<?$APPLICATION->IncludeComponent('bitrix:menu', "bottom", array(
 								"ROOT_MENU_TYPE" => "top",
 								"MENU_CACHE_TYPE" => "Y",
@@ -148,16 +148,26 @@
 						</div>
 
 						<div class="td infobottom">
+							<div class="title-bottom">Каталоги</div>
+							<a href="/tyres">Каталог шин</a><br>
+							<a href="/wheels">Каталог дисков</a><br>
+							<hr>
+							<div class="title-bottom">Подбор шин и дисков</div>
+							<a href="tyres/podbor-shin.php">Подбор шин</a><br>
+							<a href="wheels/podbor-diskov.php">Подбор дисков</a><br>
 							
 						</div>
 
 						<div class="td addr">
+							<div class="title-bottom">Как с нами связаться: </div>
 							<p class="phone"><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/telephone.php"), false);?></p>
-							<address>
-								<?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/schedule.php"), false);?><br/><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/time.php"), false);?><br/><br/><?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/address.php"), false);?>
+							<br><address>
+								<p>Челябинск, пр. Комсомольский 7</p>
+								<p>info@мега.онлайн</p>
+								<p>Работаем с 9:00 до 19:00, пн — пт</p>
+
 							</address>
-							<?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/copyright.php"), false);?>
-					
+							
 						</div>
 
 						<div class="clear"></div>
@@ -168,10 +178,10 @@
 
             </footer>
             <!-- // Footer -->
-        </div>
-        <div class="overlay"></div>
-
-<!-- Yandex.Metrika counter -->
+        
+					<div class="copyright">
+					<?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."include/copyright.php"), false);?>
+					<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
 (function (d, w, c) {
     (w[c] = w[c] || []).push(function() {
@@ -199,5 +209,10 @@
 </script>
 <noscript><div><img src="//mc.yandex.ru/watch/28686586" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
+					</div>
+					
+        <div class="overlay"></div>
+
+
     </body>
 </html>

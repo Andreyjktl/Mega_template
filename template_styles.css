@@ -508,6 +508,7 @@ label input {
 div.center {
 	width: 937px;
 	margin: 34px auto 0;
+	margin-bottom: 50px;
 	position: relative;
 	
 	font-size: 1.2em;
@@ -1072,15 +1073,13 @@ footer {
 div.bottom-block {
 	background: url(./images/footer.gif) repeat-x 0 0;
 	color: #fff;
-	border-top: 1px solid #007ba9;
 	border-bottom: 1px solid #004f84;
-	margin-top: -1px;
+	padding-left: 220px;
 }
 div.bottom-block div.brd {
 height: 100px;
 	padding: 27px 38px 37px 38px;
-	border-top: 1px solid #009ad3;
-	border-bottom: 1px solid #0076c2;
+	
 }
 div.bottom-block h4 {
 	padding: 0 0 10px 0;
@@ -1099,7 +1098,6 @@ div.bottom-block ul {
 footer div.shop {
 	float: left;
 	width: 300px;
-	border-right: 1px solid #bebebe;
 }
 footer div.shop ul {
 	float: left;
@@ -1112,7 +1110,6 @@ footer div.addr {
 	float: left;
 	width: 240px;
 	padding: 0 0 0 22px;
-	border-left: 1px solid #0392d3;
 }
 footer div.addr p.phone {
 	margin-top: -3px;
@@ -1135,8 +1132,13 @@ footer div.infobottom ul {
 
 /* Copyright */
 div.copyright {
-	padding: 17px 15px 14px 15px;
+	padding: 17px 15px 14px 220px;
+	font-size: 12px;
+	background: #bebebe;
+    color: #0085c1;
 }
+
+
 div.copyright p {
 	padding: 0;
 	margin: 0;
@@ -1789,6 +1791,16 @@ div.catalog div.overflow {
 	overflow: hidden;
 	width: 670px;
 }
+
+div.catalog div.overflow670 {
+	overflow: hidden;
+	width: 670px;
+}
+
+div.catalog div.overflow820 {
+	overflow: hidden;
+	width: 820px;
+}
 table.catalog {
 	table-layout: fixed;
 }
@@ -1915,7 +1927,7 @@ span.green {
 	height: 30px;
 	padding-top: 14px;
 	overflow: hidden;
-	background: url(./images/icons/green.png) no-repeat 0 0;
+	background: url(images/icons/green.png) no-repeat 0 0;
 	line-height: 1.45em;
 	font-weight: bold;
 	color: #fff;
@@ -2906,8 +2918,8 @@ div.title-search-fader {
 }
 div.copyright div.lb {
 	padding-top: 15px;
-	padding-left: 8px;
-	width: 612px;
+	padding-left: 80px;
+	width: 100px;
 }
 
 .filter-side {
@@ -2931,5 +2943,17 @@ tr.right_menu{
 }
 
 .content-s {
-  margin-left: 270px;
+  margin-left: 250px;
+}
+
+/* Добавленные мной*/
+div.title-bottom {
+    font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+div.top_panel{
+	
 }
