@@ -30,6 +30,7 @@
 		<div id="panel"><?$APPLICATION->ShowPanel()?></div>
 		<!-- Center -->
 		<div class="top_panel">
+		
 		</div>
 		<div class="center">
 			<!-- Header -->
