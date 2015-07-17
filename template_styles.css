@@ -467,7 +467,7 @@ select {
 	font: normal 1em/1.5em Arial, sans-serif;
 	margin: 0;
 	outline: none;
-	height: 22px;
+	height: 30px;
 	vertical-align: middle;
 }
 select.ff {
@@ -525,9 +525,11 @@ div.center {
 
 /* Header */
 header {
+	height: 100%;
 	display: block;
 	padding: 0;
 	margin: 0;
+
 }
 div.top-block {
 	position: relative;
@@ -968,13 +970,12 @@ div.signin div.submit {
 	text-align: center;
 }
 
-
 /* Promo Block */
 div.promo {
 	height: 283px;
 	/*margin: 0 -1px;*/
 	overflow: hidden;
-	border-bottom: 1px solid #d1dadf;
+	border-bottom: 0px solid #d1dadf;
 	position: relative;
 	z-index: 10;
 }
@@ -1003,7 +1004,7 @@ div.promo div.hovered {
 }
 div.promo div.tires {
 	position: absolute;
-	left: 600px;
+	left: 267px;
 	top: 27px;
 	z-index: 25;
 }
@@ -1033,7 +1034,7 @@ ul.promo li.last-active {
 }
 ul.promo div.image {
 	width: 939px;
-	height: 283px;
+	height: 250px;
 	overflow: hidden;
 	background: #fff;
 	position: absolute;
@@ -1045,12 +1046,52 @@ ul.promo div.image img {
 	min-width: 939px;
 	min-height: 283px;
 }
-
+ul.promo div.sticker {
+	width: 276px;
+	height: 170px;
+	padding: 6px;
+	/* background: url(./images/sticker.png) no-repeat 0 0; */
+	background-color: rgba(255,255,255,0.75);
+	position: absolute;
+	right: 69px;
+	top: 20px;
+	z-index: 30;
+	border-radius: 50px;
+	border: 1px solid white;
+}
+ul.promo div.sticker {
+	width: 250px;
+	height: 190px;
+	padding: 15px 12px 8px 14px;
+	overflow: hidden;
+	/*background: #fff; */
+}
+div.bg {
+	width: 250px;
+	height: 170px;
+	padding: 15px 12px 8px 14px;
+	overflow: hidden;
+}
+ul.promo div.sticker div.loading {
+	background: #fff url(./images/loading.gif) no-repeat 50% 50%;
+}
+ul.promo div.sticker div.loading div {
+	display: none;
+}
+ul.promo div.sticker h3 {
+	line-height: 1.35em;
+	padding: 0 0 19px 0;
+	margin: 0;
+	color: #229CC8;
+}
+ul.promo div.sticker span.price {
+	font-size: 1.3em;
+}
 
 
 /* Promo Block Mini */
 div.mini {
-	height: 129px;
+	height: 10px;
 }
 div.mini div.banner {
 	position: absolute;
@@ -1058,8 +1099,6 @@ div.mini div.banner {
 	top: 14px;
 	z-index: 50;
 }
-
-
 
 
 /* Footer */
@@ -1165,7 +1204,7 @@ p.bitrix {
 /* Filter */
 div.filter {
 	color: #fff;
-	margin-top: -1px;
+	margin-top: -10px;
 	position: relative;
 	z-index: 200;
 }
@@ -1174,7 +1213,6 @@ div.filter {
 /* Filter Tabs */
 div.filter div.top {
 	height: 30px;
-	position: absolute;
 	left: 0;
 	top: -0px;
 	z-index: 400;
@@ -1188,6 +1226,7 @@ div.filter div.top ul {
 }
 div.filter div.top ul li {
 	float: left;
+	width: 49.85%;
 	height: 29px;
 	background: #4e4e4e url(./images/filter-tab.gif) repeat-x 0 0;
 	border: 1px solid #484849;
@@ -1199,8 +1238,8 @@ div.filter div.top h4 {
 	color: #fff;
 	padding: 6px 22px 3px 22px;
 	margin: 0;
-	float: left;
-	border: 1px solid rgba(255,255,255,0.11);
+	/*float: left;
+	border: 1px solid rgba(255,255,255,0.11);*/
 }
 div.filter div.top ul li.hovered h4 {
 	background: url(./images/hover.png);
@@ -1242,10 +1281,10 @@ div.filter div.params {
 	float: left;
 	width: 920px;
 	min-height: 121px;
-	padding: 20px 0 13px 14px;
+	padding: 0px 0 10px 14px;
 	border-right: 1px solid #0070a9;
 	margin-right: -10px;
-	background: url(./images/filter-params.gif) repeat-y 100% 0;
+	background-color: #cfd4da;
 }
 div.fieldset {
 	display: none;
@@ -1274,10 +1313,15 @@ div.fieldset button span {
 }
 div.fieldset select {
 	float: left;
+	padding: 3px;
 	margin-right: 10px;
+	border-radius: 3px;
+	border: 1px solid grey;
+
 }
 div.fieldset select.size0 {
 	width: 71px;
+	
 }
 div.fieldset select.size1 {
 	width: 90px;
@@ -1481,7 +1525,7 @@ span.webkit span {
 
 /* Content */
 div.content {
-	padding: 20px 0px 30px 0px;
+	padding: 00px 0px 30px 0px;
 	background: rgba(255, 255, 255, 0.81);
 }
 p.breadcrumbs {
@@ -3031,3 +3075,52 @@ background: #138ac2 url(../images/select_display_galery.png) no-repeat top left;
 }
 
 /*Конец*/
+
+/*Новости*/
+.rss-show{
+
+	padding: 10px;
+	margin-bottom: 10px;
+
+}
+h2.rss-show{
+	  color: #0085c1;
+}
+h3.rss-show{
+	  color: #0085c1;
+}
+
+div.rss-show{
+width: 42%;
+  border: 1px solid #d1dae0;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+  float: left;
+}
+
+/*Конец. Новости*/
+
+/*Главное (тело)*/
+
+.l_side{
+	width:30%; 
+	float:left;
+}
+
+.main_side{
+	float:left; 
+	width:60%;
+}
+
+.main_table{
+	border-collapse: collapse;
+	padding: 10px;
+}
+/*Конец. Главное (тело)*/
+
+/*Поиск*/
+.filter_table{
+text-align: center;
+}
+/*Конец. Поиск*/

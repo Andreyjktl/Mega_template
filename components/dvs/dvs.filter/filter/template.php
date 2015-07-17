@@ -25,58 +25,65 @@
                 <!-- TYRES.PARAMS -->
                 <form id="tp_form" action="<?=SITE_DIR?>search.php" method="get" class="f1">
                     <fieldset>
-                        <select class="size3" id="tp_brand" name="brand"><option value="0"><?=GetMessage("DVS_PROPD");?></option>
-                            <?foreach($arResult['TYRES']['BRAND'] as $key => $value){
-                                if(isset($_REQUEST['brand'])&&$_REQUEST['brand']==$key)
-                                    echo '<option value="'.$key.'" selected>'.$value.'</option>';
-                                else
-                                    echo '<option value="'.$key.'">'.$value.'</option>';
-                            }?>
-                        </select>
-
-                        <select class="size0" id="tp_width" name="width"><option value="0"><?=GetMessage("DVS_WIDTH");?></option>
+            <table class="filter_table">
+            <tr>
+                <th>Ширина</th>
+                <th></th>
+                <th>Высота</th>
+                <th></th>
+                <th>Диаметр</th>
+                <th>Сезон</th>
+            </tr>
+            <tr>
+                <td><select class="size0" id="tp_width" name="width"><option value="0"><?=GetMessage("DVS_WIDTH");?></option>
                             <?foreach($arResult['TYRES']['WIDTH'] as $key => $value){
                                 if(isset($_REQUEST['width'])&&$_REQUEST['width']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
                                 else
                                     echo '<option value="'.$key.'">'.$value.'</option>';
                             }?>
-                        </select>
-
-                        <select class="size0" id="tp_height" name="height"><option value="0"><?=GetMessage("DVS_HEIGHT");?></option>
+                        </select></td>
+                <td><span>/</span></td>
+                <td><select class="size0" id="tp_height" name="height"><option value="0"><?=GetMessage("DVS_HEIGHT");?></option>
                             <?foreach($arResult['TYRES']['HEIGHT'] as $key => $value){
                                 if(isset($_REQUEST['height'])&&$_REQUEST['height']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
                                 else
                                     echo '<option value="'.$key.'">'.$value.'</option>';
                             }?>
-                        </select>
-
-                        <select class="size0" id="tp_diameter" name="diameter"><option value="0"><?=GetMessage("DVS_DIAM");?></option>
+                        </select></td>
+                <td><span>R</span></td>
+                <td><select class="size0" id="tp_diameter" name="diameter"><option value="0"><?=GetMessage("DVS_DIAM");?></option>
                             <?foreach($arResult['TYRES']['DIAM'] as $key => $value){
                                 if(isset($_REQUEST['diameter'])&&$_REQUEST['diameter']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
                                 else
                                     echo '<option value="'.$key.'">'.$value.'</option>';
                             }?>
-                        </select>
-                    
-                        <select class="size2" id="tp_season" name="season" id="season"><option value="0"><?=GetMessage("DVS_SEASON");?></option>
+                        </select></td>
+
+                        <td><select class="size2" id="tp_season" name="season" id="season"><option value="0"><?=GetMessage("DVS_SEASON");?></option>
                             <?foreach($arResult['TYRES']['SEASON'] as $key => $value){
                                 if(isset($_REQUEST['season'])&&$_REQUEST['season']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
                                 else
                                     echo '<option value="'.$key.'">'.$value.'</option>';
                             }?>
-                        </select>
-                        <select class="size2" id="tp_pin" name="pin" id="pin" <?if(!isset($_REQUEST['season'])||isset($_REQUEST['season'])&&$_REQUEST['season']!='zima') echo 'style="display:none;" disabled';?>><option value="0"><?=GetMessage("DVS_PIN");?></option>
+                        </select></td>
+                        <td><select class="size2" id="tp_pin" name="pin" id="pin" <?if(!isset($_REQUEST['season'])||isset($_REQUEST['season'])&&$_REQUEST['season']!='zima') echo 'style="display:none;" disabled';?>><option value="0"><?=GetMessage("DVS_PIN");?></option>
                             <?foreach($arResult['TYRES']['PIN'] as $key => $value){
                                 if(isset($_REQUEST['pin'])&&$_REQUEST['pin']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
                                 else
                                     echo '<option value="'.$key.'">'.$value.'</option>';
                             }?>
-                        </select>
+                        </select></td>
+            </tr>
+            </table>                      
+                       
+                                   
+                        
+                        
                     </fieldset>
                     <fieldset>
                         <input type="hidden" name="do_search" value="tyres" />
@@ -148,33 +155,16 @@
                 <!-- WHEEL.PARAMS -->
                 <form id="wp_form" action="<?=SITE_DIR?>search.php" method="get" class="f3">
                     <fieldset>
-                        <select id="wp_brand" class="size5" name="brand">
-                            <option value="0"><?echo GetMessage("DVS_PROPD");?></option>
-                            <?foreach($arResult['WHEELS']['BRAND'] as $key => $value){
-                                if(isset($_REQUEST['brand'])&&$_REQUEST['brand']==$key)
+                        
+                       </select>
+                        <select id="wp_diameter" class="size0" name="diameter">
+                            <option value="0"><?echo GetMessage("DVS_POS_DIAM");?></option>
+                            <?foreach($arResult['WHEELS']['DIAM'] as $key => $value){
+                                if(isset($_REQUEST['diameter'])&&$_REQUEST['diameter']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
                                 else
                                     echo '<option value="'.$key.'">'.$value.'</option>';
                             }?>
-                        </select>
-                        <select id="wp_apperture" class="size0" name="aperture">
-                            <option value="0"><?echo GetMessage("DVS_PCD");?></option>
-                            <?foreach($arResult['WHEELS']['APERTURE'] as $key => $value){
-                                if(isset($_REQUEST['aperture'])&&$_REQUEST['aperture']==$key)
-                                    echo '<option value="'.$key.'" selected>'.$value.'</option>';
-                                else
-                                    echo '<option value="'.$key.'">'.$value.'</option>';
-                            }?>
-                        </select>
-                        <select id="wp_center" class="size0" name="center">
-                            <option value="0"><?echo GetMessage("DVS_DIAM_C");?></option>
-                            <?foreach($arResult['WHEELS']['CENTER'] as $key => $value){
-                                if(isset($_REQUEST['center'])&&$_REQUEST['center']==$key)
-                                    echo '<option value="'.$key.'" selected>'.$value.'</option>';
-                                else
-                                    echo '<option value="'.$key.'">'.$value.'</option>';
-                            }?>
-                        </select>
                    
                         <select id="wp_width" class="size0" name="width">
                             <option value="0"><?echo GetMessage("DVS_WIDTH_T");?></option>
@@ -184,15 +174,7 @@
                                 else
                                     echo '<option value="'.$key.'">'.$value.'</option>';
                             }?>
-                        </select>
-                        <select id="wp_diameter" class="size0" name="diameter">
-                            <option value="0"><?echo GetMessage("DVS_POS_DIAM");?></option>
-                            <?foreach($arResult['WHEELS']['DIAM'] as $key => $value){
-                                if(isset($_REQUEST['diameter'])&&$_REQUEST['diameter']==$key)
-                                    echo '<option value="'.$key.'" selected>'.$value.'</option>';
-                                else
-                                    echo '<option value="'.$key.'">'.$value.'</option>';
-                            }?>
+                        
                         </select>
                         <select id="wp_grab" class="size0" name="gab">
                             <option value="0"><?echo GetMessage("DVS_ET");?></option>
@@ -207,6 +189,24 @@
                             <option value="0"><?echo GetMessage("DVS_COUNT");?></option>
                             <?foreach($arResult['WHEELS']['COUNT'] as $key => $value){
                                 if(isset($_REQUEST['count'])&&$_REQUEST['count']==$key)
+                                    echo '<option value="'.$key.'" selected>'.$value.'</option>';
+                                else
+                                    echo '<option value="'.$key.'">'.$value.'</option>';
+                            }?>
+                        </select>
+                         <select id="wp_apperture" class="size0" name="aperture">
+                            <option value="0"><?echo GetMessage("DVS_PCD");?></option>
+                            <?foreach($arResult['WHEELS']['APERTURE'] as $key => $value){
+                                if(isset($_REQUEST['aperture'])&&$_REQUEST['aperture']==$key)
+                                    echo '<option value="'.$key.'" selected>'.$value.'</option>';
+                                else
+                                    echo '<option value="'.$key.'">'.$value.'</option>';
+                            }?>
+                        </select>
+                        <select id="wp_center" class="size0" name="center">
+                            <option value="0"><?echo GetMessage("DVS_DIAM_C");?></option>
+                            <?foreach($arResult['WHEELS']['CENTER'] as $key => $value){
+                                if(isset($_REQUEST['center'])&&$_REQUEST['center']==$key)
                                     echo '<option value="'.$key.'" selected>'.$value.'</option>';
                                 else
                                     echo '<option value="'.$key.'">'.$value.'</option>';

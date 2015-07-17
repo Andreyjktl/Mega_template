@@ -35,7 +35,7 @@
                 $iPrice = $iDiscount = $iDiscountDiff = -1;
                 $sPrice = $sDiscount = $sDiscountDiff = "";
                 foreach($arElement["PRICES"] as $code => $arPrice){
-                    if($arPrice["CAN_ACCESS"] == "Y") { // ѕользователь может видеть цену
+                    
                         if ($arPrice["CAN_BUY"] == "Y") { // ѕользователь может покупать по этой цене
                             if (($iPrice < 0) || ($iDiscount < 0) || ($iDiscount > $arPrice["DISCOUNT_VALUE"])) {
 
@@ -49,22 +49,23 @@
                                 $sDiscountDiff = $arPrice["PRINT_DISCOUNT_DIFF"];
                             }
                         }
-                    }
+                    
                 }
+
                 if ($iPrice > $iDiscount) { $sale = true; }
 
-                // $price = '';
-                // foreach($arElement["PRICES"] as $code=>$arPrice){
-                //     if($arPrice["CAN_ACCESS"]){
-                //         if($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]){
-                //             $price = '<p><span class="strike">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></span> ('.($arPrice["DISCOUNT_VALUE"] - $arPrice["VALUE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span>)</p>
-                //                       <p class="price">'.$arPrice["DISCOUNT_VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
-                //             $sale = true;
-                //         } else {
-                //             $price = '<p class="price">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
-                //         }
-                //     }
-                // }
+                $price = '';
+                 foreach($arElement["PRICES"] as $code=>$arPrice){
+                     if($arPrice["CAN_ACCESS"]){
+                         if($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]){
+                             $price = '<p><span class="strike">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></span> ('.($arPrice["DISCOUNT_VALUE"] - $arPrice["VALUE"]).' <span class="rubl">'.GetMessage("DVS_RUB").'</span>)</p>
+                                       <p class="price">'.$arPrice["DISCOUNT_VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
+                             $sale = true;
+                         } else {
+                             $price = '<p class="price">'.$arPrice["VALUE"].' <span class="rubl">'.GetMessage("DVS_RUB").'</span></p>';
+                         }
+     }
+                 }
 
 
                 //кол-во

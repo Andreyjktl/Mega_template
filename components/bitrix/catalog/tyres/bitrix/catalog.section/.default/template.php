@@ -21,7 +21,7 @@ $i=0;
         <?}?>
         <div class="clear"></div>
     </div>
-    <div class="overflow">
+    <div class="overflow820">
         <table class="catalog">
     <?foreach($arSeason['ITEMS'] as $arLine):
             $iterator = 0;

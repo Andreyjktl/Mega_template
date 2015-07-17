@@ -43,7 +43,7 @@ $this->setFrameMode(true);
 		<tr>
 		<?endif;?>
 
-		<td valign="top" width="<?=round(100/$arParams["LINE_ELEMENT_COUNT"])?>%" style="border:1px solid #CCCCCC" id="<?=$this->GetEditAreaId($arElement['ID']);?>">
+		<td valign="top" width="<?=round(100/$arParams["LINE_ELEMENT_COUNT"])?>%" style="border:0px solid #CCCCCC" id="<?=$this->GetEditAreaId($arElement['ID']);?>">
 			<table cellpadding="0" cellspacing="2" border="0">
 				<tr>
 					<?if(is_array($arElement["PREVIEW_PICTURE"])):?>
@@ -70,7 +70,7 @@ $this->setFrameMode(true);
 						</td>
 					<?endif?>
 					<td valign="top"><a href="<?=$arElement["DETAIL_PAGE_URL"]?>"><b><?=$arElement["NAME"]?></b></a><br /><br />
-						<?
+						<?/*
 						$pub_date = '';
 						if ($arElement["ACTIVE_FROM"])
 							$pub_date = FormatDate($GLOBALS['DB']->DateFormatToPhp(CSite::GetDateFormat('FULL')), MakeTimeStamp($arElement["ACTIVE_FROM"]));
@@ -79,7 +79,7 @@ $this->setFrameMode(true);
 
 						if ($pub_date)
 							echo '<b>'.GetMessage('PUB_DATE').'</b>&nbsp;'.$pub_date.'<br />';
-						?>
+						*/?>
 						<?foreach($arElement["DISPLAY_PROPERTIES"] as $pid=>$arProperty):
 							echo '<b>'.$arProperty["NAME"].':</b>&nbsp;';
 

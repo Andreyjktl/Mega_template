@@ -15,7 +15,7 @@ $_SESSION["TYRES"]["TEXT"][$_SESSION["SALE_USER_ID"]]["DVS_IN_BASKET"] = GetMess
 
         $order = $inStock = $pin = $sale = $hit = false;
 
-        //сезон
+        //Г±ГҐГ§Г®Г­
         $season_name = $arElement['PROPERTIES']['model_season']['VALUE_ENUM'];
         if($arElement['PROPERTIES']['model_season']['VALUE_XML_ID']=='leto'){
             $season_class = 'summer';
@@ -30,12 +30,12 @@ $_SESSION["TYRES"]["TEXT"][$_SESSION["SALE_USER_ID"]]["DVS_IN_BASKET"] = GetMess
             $hit = true;
         }
 
-        //цены
+        //Г¶ГҐГ­Г»
         $iPrice = $iDiscount = $iDiscountDiff = -1;
         $sPrice = $sDiscount = $sDiscountDiff = "";
         foreach($arElement["PRICES"] as $code => $arPrice){
-            if($arPrice["CAN_ACCESS"] == "Y") { // Пользователь может видеть цену
-                if ($arPrice["CAN_BUY"] == "Y") { // Пользователь может покупать по этой цене
+            if($arPrice["CAN_ACCESS"] == "Y") { // ГЏГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гј Г¬Г®Г¦ГҐГІ ГўГЁГ¤ГҐГІГј Г¶ГҐГ­Гі
+                if ($arPrice["CAN_BUY"] == "Y") { // ГЏГ®Г«ГјГ§Г®ГўГ ГІГҐГ«Гј Г¬Г®Г¦ГҐГІ ГЇГ®ГЄГіГЇГ ГІГј ГЇГ® ГЅГІГ®Г© Г¶ГҐГ­ГҐ
                     if (($iPrice < 0) || ($iDiscount < 0) || ($iDiscount > $arPrice["DISCOUNT_VALUE"])) {
 
                         $iPrice = $arPrice["VALUE"];
@@ -52,7 +52,7 @@ $_SESSION["TYRES"]["TEXT"][$_SESSION["SALE_USER_ID"]]["DVS_IN_BASKET"] = GetMess
         }
         if ($iPrice > $iDiscount) { $sale = true; }
 
-        //кол-во
+        //ГЄГ®Г«-ГўГ®
         $quantity = '';
         if($arElement['CATALOG_QUANTITY'] < 1){
             $quantity = '<span class="absent">'.dvsListABSENT.'</span>';//***
@@ -77,7 +77,7 @@ $_SESSION["TYRES"]["TEXT"][$_SESSION["SALE_USER_ID"]]["DVS_IN_BASKET"] = GetMess
             }
         }
 
-        //шильды
+        //ГёГЁГ«ГјГ¤Г»
         $icons = '';
         if ($sale || $hit) {
             $icons = '<ul class="icons">'.
@@ -133,8 +133,8 @@ $_SESSION["TYRES"]["TEXT"][$_SESSION["SALE_USER_ID"]]["DVS_IN_BASKET"] = GetMess
     }
 ?>
 <div class="tab tab-<?=$i?>">
-    <div class="catalog">
-        <div class="overflow">
+    <div class="catalog_left">
+        <div class="overflow_left">
             <table class="catalog">
                 <tr class="img">
                     <?=implode('', $arImgs)?>
