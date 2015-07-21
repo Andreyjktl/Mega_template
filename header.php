@@ -287,10 +287,13 @@
 					*/?>
 				</div>
 				<!-- // Promo Mini -->
+				
+
 				<?}?>
 
-				<?if (CSite::InDir(SITE_DIR.'index.php')) {?>
-				<?
+				<?/*<?if (CSite::InDir(SITE_DIR.'index.php')) {?>
+				<br>
+				 <?
 				$APPLICATION->IncludeComponent(
 						"dvs:dvs.filter",
 						"",
@@ -304,7 +307,7 @@
 				false
 				);
 				?> 
-				<?}?>
+				<?}?> */?>
 
 				<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "", array(
 					"START_FROM" => "0",

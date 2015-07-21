@@ -609,7 +609,7 @@ div.phone p.phone {
 	padding-bottom: 4px;
 }
 div.cart-info {
-	padding: 1px 0 0 24px;
+	padding: 1px 0 0 64px;
 }
 div.cart-info p.cart {
 	font-size: 1.5em;
@@ -972,7 +972,7 @@ div.signin div.submit {
 
 /* Promo Block */
 div.promo {
-	height: 283px;
+	height: 250px;
 	/*margin: 0 -1px;*/
 	overflow: hidden;
 	border-bottom: 0px solid #d1dadf;
@@ -1044,7 +1044,7 @@ ul.promo div.image {
 }
 ul.promo div.image img {
 	min-width: 939px;
-	min-height: 283px;
+	min-height: 250px;
 }
 ul.promo div.sticker {
 	width: 276px;
@@ -2987,6 +2987,7 @@ tr.right_menu{
 .filter-s {
   float: left;
   width: 241px;
+
 }
 
 .content-s {
@@ -3124,3 +3125,89 @@ width: 42%;
 text-align: center;
 }
 /*Конец. Поиск*/
+
+
+
+/* Базовый контейнер табов */
+.tabs_main {
+  min-width: 320px;
+  max-width: 100%;
+  padding: 0px;
+  margin: 0 auto; 
+}
+/* стили секций с содержанием */
+section {
+  display: none;
+  padding: 15px;
+  background: #fff;
+  border: 1px solid #ddd;
+}
+.tabs_main input {
+  display: none;
+}
+/* стили вкладок (табов) */
+.tabs_main label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 5px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #aaa;
+  border: 1px solid #ddd;
+  background: #f1f1f1;
+  border-radius: 3px 3px 0 0;
+}
+/* шрифт-иконки от Font Awesome в формате Unicode */
+.tabs_main label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+.tabs_main label[for*="1"]:before {
+  content: "\f19a";
+}
+.tabs_main label[for*="2"]:before {
+  content: "\f17a";
+}
+.tabs_main label[for*="3"]:before {
+  content: "\f13b";
+}
+.tabs_main label[for*="4"]:before {
+  content: "\f13c";
+}
+/* изменения стиля заголовков вкладок при наведении */
+.tabs_main label:hover {
+  color: #0085c1;
+  cursor: pointer;
+}
+/* стили для активной вкладки */
+.tabs_main input:checked + label {
+  color: #0085c1;
+  border: 1px solid #ddd;
+  border-top: 1px solid #009933;
+  border-bottom: 1px solid #fff;
+  background: #fff;
+}
+/* активация секций с помощью переключателя :checked */
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+/* медиа запросы для различных типов носителей */  
+@media screen and (max-width: 680px) {
+  .tabs_main label {
+    font-size: 0;
+  }
+ 
+  .tabs_main label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .tabs_main label {
+    padding: 15px;
+  }
+}
