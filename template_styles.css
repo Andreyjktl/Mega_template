@@ -538,6 +538,7 @@ div.top-block {
 	min-height: 117px;
 	
 	border-bottom: 1px solid #d1dadf;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAMAAAApB0NrAAAABlBMVEX///+pqalTpKl9AAAAAnRSTlMAGovxNEIAAAAdSURBVDjLY2AAAUaG4UYxDDsfjfp91O+jfqfE7wCzpQCw/dq+qQAAAABJRU5ErkJggg==");
 }
 
 
@@ -786,6 +787,16 @@ div.submenu2 h4 {
 
 
 /* Navigation */
+.bg_nav {
+	display: block;
+	background-color: grey;
+	position: absolute;
+	left: 0;
+	top: -24px;
+	z-index: 400;
+	
+}
+
 nav {
 	display: block;
 	padding: 0;
@@ -795,7 +806,9 @@ nav {
 	left: 0;
 	top: -24px;
 	z-index: 400;
+
 }
+
 nav ul {
 	list-style: none;
 	list-style-image: none;
@@ -3134,28 +3147,33 @@ text-align: center;
   max-width: 100%;
   padding: 0px;
   margin: 0 auto; 
-}
+  background-color: rgb(0, 133, 193);
+  background-image: url(images/blue_bg.png);
+  }
 /* стили секций с содержанием */
 section {
   display: none;
-  padding: 15px;
-  background: #fff;
-  border: 1px solid #ddd;
+  padding: 0px;
+  background:rgba(0, 133, 193, 0.35);
+  
 }
 .tabs_main input {
   display: none;
 }
 /* стили вкладок (табов) */
 .tabs_main label {
+	font-size: 20px;
+
   display: inline-block;
-  margin: 0 0 -1px;
+  margin: 0 0 0px;
   padding: 5px 25px;
   font-weight: 600;
   text-align: center;
-  color: #aaa;
-  border: 1px solid #ddd;
-  background: #f1f1f1;
+  color: white;
+  border: 0px solid #ddd;
+  background: rgba(0, 133, 193, 0.79);
   border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid black;
 }
 /* шрифт-иконки от Font Awesome в формате Unicode */
 .tabs_main label:before {
@@ -3177,16 +3195,16 @@ section {
 }
 /* изменения стиля заголовков вкладок при наведении */
 .tabs_main label:hover {
-  color: #0085c1;
+  color: black;
   cursor: pointer;
 }
 /* стили для активной вкладки */
 .tabs_main input:checked + label {
-  color: #0085c1;
-  border: 1px solid #ddd;
-  border-top: 1px solid #009933;
-  border-bottom: 1px solid #fff;
-  background: #fff;
+  color: white;
+  border: 1px solid #0085c1;
+  border-top: 0px solid #0085c1;
+  border-bottom: 1px solid #0085c1;
+  background: #0085c1;
 }
 /* активация секций с помощью переключателя :checked */
 #tab1:checked ~ #content1,
@@ -3195,6 +3213,8 @@ section {
 #tab4:checked ~ #content4 {
   display: block;
 }
+
+
 /* медиа запросы для различных типов носителей */  
 @media screen and (max-width: 680px) {
   .tabs_main label {

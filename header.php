@@ -35,10 +35,12 @@
 		<div class="center">
 			<!-- Header -->
 			<header>
+			<div class="bg_nav"></div>
 				<!-- Top Block -->
 				<div class="top-block">
 
 				<!-- Navigation -->
+
 					<?$APPLICATION->IncludeComponent('bitrix:menu', "top", array(
 						"ROOT_MENU_TYPE" => "top",
 						"MENU_CACHE_TYPE" => "Y",
@@ -317,6 +319,7 @@
 					false,
 					Array()
 				);?>
+				
 
 				<?if (!CSite::InDir(SITE_DIR.'index.php')) {?><h1><?$APPLICATION->ShowTitle(false);?></h1><?}?>
 
