@@ -1,5 +1,12 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 
+<?if ($_GET["sort"] == "name" || 
+              $_GET["sort"] == "CATALOG_PRICE_1" ){
+        $arParams["ELEMENT_SORT_FIELD"] = $_GET["sort"];
+        $arParams["ELEMENT_SORT_ORDER"] = $_GET["method"];
+    }else{}?>
+
+
 <?$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section",
 	"",

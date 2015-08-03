@@ -39,23 +39,24 @@ $this->setFrameMode(true);
 		$this->AddEditAction($arElement['ID'], $arElement['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
 		$this->AddDeleteAction($arElement['ID'], $arElement['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BCS_ELEMENT_DELETE_CONFIRM')));
 		?>
-		<?if($cell%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
+		<?// echo "<pre>";  print_r($arElement); echo "</pre>"; ?>
+		
 		<tr>
-		<?endif;?>
-
-		<td valign="top" width="<?=round(100/$arParams["LINE_ELEMENT_COUNT"])?>%" style="border:0px solid #CCCCCC" id="<?=$this->GetEditAreaId($arElement['ID']);?>">
-			<table cellpadding="0" cellspacing="2" border="0">
-				<tr>
-					<?if(is_array($arElement["PREVIEW_PICTURE"])):?>
+		<td valign="top" width="33%">
+			<a href="<?=$arElement["DETAIL_PAGE_URL"]?>"><b><?=$arElement["NAME"]?></b></a><br />
+			<?if(is_array($arElement["PREVIEW_PICTURE"])):?>
 						<td valign="top">
-						<a href="<?=$arElement["DETAIL_PAGE_URL"]?>"><img
+						<a href="<?=$arElement["DETAIL_PAGE_URL"]?>">
+						<img
 								border="0"
 								src="<?=$arElement["PREVIEW_PICTURE"]["SRC"]?>"
-								width="<?=$arElement["PREVIEW_PICTURE"]["WIDTH"]?>"
-								height="<?=$arElement["PREVIEW_PICTURE"]["HEIGHT"]?>"
+								width="200px"
+								height="200px"
 								alt="<?=$arElement["PREVIEW_PICTURE"]["ALT"]?>"
 								title="<?=$arElement["PREVIEW_PICTURE"]["TITLE"]?>"
 								/></a><br />
+
+               
 						</td>
 					<?elseif(is_array($arElement["DETAIL_PICTURE"])):?>
 						<td valign="top">
@@ -68,9 +69,24 @@ $this->setFrameMode(true);
 								title="<?=$arElement["DETAIL_PICTURE"]["TITLE"]?>"
 								/></a><br />
 						</td>
+						<?elseif(is_array($arElement["DETAIL_PICTURE"])):?>
+						<td valign="top">
+						<a href="<?=$arElement["DETAIL_PAGE_URL"]?>">
+						<img 
+								border="0"
+								src="/images/camera.svg"
+								width="128"
+								height="128"
+								
+								/></a><br />
+						</td>
 					<?endif?>
-					<td valign="top"><a href="<?=$arElement["DETAIL_PAGE_URL"]?>"><b><?=$arElement["NAME"]?></b></a><br /><br />
-						<?/*
+		</td>
+
+		<td valign="top" width="33%" style="border:0px solid #CCCCCC" id="<?=$this->GetEditAreaId($arElement['ID']);?>">
+			<table cellpadding="0" cellspacing="2" border="0">
+				<tr>
+					<?/*
 						$pub_date = '';
 						if ($arElement["ACTIVE_FROM"])
 							$pub_date = FormatDate($GLOBALS['DB']->DateFormatToPhp(CSite::GetDateFormat('FULL')), MakeTimeStamp($arElement["ACTIVE_FROM"]));
@@ -79,7 +95,7 @@ $this->setFrameMode(true);
 
 						if ($pub_date)
 							echo '<b>'.GetMessage('PUB_DATE').'</b>&nbsp;'.$pub_date.'<br />';
-						*/?>
+					*/?>
 						<?foreach($arElement["DISPLAY_PROPERTIES"] as $pid=>$arProperty):
 							echo '<b>'.$arProperty["NAME"].':</b>&nbsp;';
 
@@ -95,7 +111,11 @@ $this->setFrameMode(true);
 				</tr>
 			</table>
 
-			<?foreach($arElement["PRICES"] as $code=>$arPrice):?>
+
+		</td>
+
+		<td valign="top" width="33%">
+						<?foreach($arElement["PRICES"] as $code=>$arPrice):?>
 				<?if($arPrice["CAN_ACCESS"]):?>
 					<p><?=$arResult["PRICES"][$code]["TITLE"];?>:&nbsp;&nbsp;
 					<?if($arPrice["DISCOUNT_VALUE"] < $arPrice["VALUE"]):?>
@@ -203,19 +223,10 @@ $this->setFrameMode(true);
 			&nbsp;
 		</td>
 
-		<?$cell++;
-		if($cell%$arParams["LINE_ELEMENT_COUNT"] == 0):?>
-			</tr>
-		<?endif?>
-
+	</tr>
 		<?endforeach; // foreach($arResult["ITEMS"] as $arElement):?>
 
-		<?if($cell%$arParams["LINE_ELEMENT_COUNT"] != 0):?>
-			<?while(($cell++)%$arParams["LINE_ELEMENT_COUNT"] != 0):?>
-				<td>&nbsp;</td>
-			<?endwhile;?>
-			</tr>
-		<?endif?>
+		
 
 </table>
 <?if($arParams["DISPLAY_BOTTOM_PAGER"]):?>

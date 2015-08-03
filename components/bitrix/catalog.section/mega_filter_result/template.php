@@ -2,12 +2,16 @@
 <?if(count($arResult["ITEMS"])>0){?>
 <div class="catalog_left">
     <div class="overflow_left">
+
+
         <table class="catalog">
     <?foreach($arResult["ITEMS"] as $arLine):?>
+
             <?
             $arImgs = $arData = $arBuy = array();
 
             foreach($arLine as $arElement):?>
+            <?// echo "<pre>";  print_r($arElement); echo "</pre>"; ?>
                 <?
 
                 $this->AddEditAction($arElement['ID'], $arElement['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -135,6 +139,22 @@
                 <p>'.$arElement['PROPERTIES']['model_type']['VALUE'].'</p>'):'')
 
                 .'<p class="'.$class.'">'.$quantity.'</p>
+                
+                <form action="'.POST_FORM_ACTION_URI.'" method="post" enctype="multipart/form-data">
+                    
+
+                </form>'
+
+
+                ;
+
+               $arBuy[] = '<td id="'.$this->GetEditAreaId($arElement['ID']).'">
+                <h4 id="name'.$arElement['ID'].'"></h4>'.
+
+                (($arElement['IBLOCK_CODE']=='tyres')?('<p><span class="'.$season_class.'">'.$season_name.($pin?', ':'').'</span>'.($pin?'<span class="spike">'.GetMessage("DVS_PIN").'</span>':'').'</p>
+                <p>'.$arElement['PROPERTIES']['model_type']['VALUE'].'</p>'):'')
+
+                .'<p class="'.$class.'">'.$quantity.'</p>
                 '.$price.'
                 <form action="'.POST_FORM_ACTION_URI.'" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="'.$arParams["ACTION_VARIABLE"].'" value="BUY">
@@ -152,15 +172,15 @@
 
 
                 ;
-               
 
         ?>
+
 
 
             <?endforeach;?>
             <tr>
             <td class="img"><?echo implode('', $arImgs);?></td>
-            <td class="txt"><?echo implode('', $arData);?><hr></td>
+            <td class="txt"><?echo implode('', $arData);?></td>
             <td class="buy"><?echo implode('', $arBuy);?></td>
             </tr>
 

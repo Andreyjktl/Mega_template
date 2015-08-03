@@ -14,7 +14,7 @@ body {
 	
 	font: 62.5%/100% Arial, sans-serif;
 	min-width: 996px;
-	padding: 0 0 34px;
+	padding: 0 0 5px;
 }
 
 a:link, a:visited, a:hover {
@@ -1187,7 +1187,7 @@ footer div.infobottom ul {
 div.copyright {
 	padding: 17px 15px 14px 220px;
 	font-size: 12px;
-	background: #bebebe;
+	
     color: #0085c1;
 }
 
@@ -1862,11 +1862,52 @@ div.catalog div.overflow820 {
 }
 table.catalog {
 	table-layout: fixed;
+	width: 100%;
 }
+
+table.catalog tr {
+	padding: 0;
+	vertical-align: top;
+}
+
 table.catalog tr td {
 	padding: 0;
 	vertical-align: top;
 }
+
+table.catalog tr td:nth-child(1) {
+	width: 1px;
+	vertical-align: top;
+
+}
+table.catalog tr td:nth-child(3) {
+	width: 1px;
+	vertical-align: top;
+}
+table.catalog tr td:nth-child(5) {
+	width: 1px;
+	vertical-align: top;
+}
+table.catalog tr td:nth-child(2) {
+	width: 150px;
+	vertical-align: top;
+	border-top: #CcCCCC;
+}
+table.catalog tr td:nth-child(4) {
+	width: 300px;
+	vertical-align: top;
+
+	border-top: #CcCCCC;
+}
+table.catalog tr td:nth-child(6) {
+	    width: 300px;
+    vertical-align: top;
+    text-align: center;
+    background-color:rgba(199, 199, 199, 0.12);
+	border-top: #CcCCCC;
+
+}
+
 table.catalog tr.img td {
 	width: 164px;
 	min-width: 164px;
@@ -1877,6 +1918,11 @@ table.catalog tr.img td img {
 	max-width: 135px;
 }
 table.catalog tr.txt td {
+	padding: 3px 25px 25px 0;
+	border-bottom: 3px solid #efefef;
+}
+
+table.catalog tr.buy td {
 	padding: 3px 25px 25px 0;
 	border-bottom: 3px solid #efefef;
 }
@@ -2163,6 +2209,8 @@ table.cart tr td.txt p {
 	padding: 6px 0 0 0;
 	margin: 0;
 }
+
+
 table.cart tr td.old-price {
 	width: 170px;
 	font-size: 1.165em;
@@ -3171,7 +3219,7 @@ section {
   text-align: center;
   color: white;
   border: 0px solid #ddd;
-  background: rgba(0, 133, 193, 0.79);
+  background: rgba(0, 133, 193, 0.3);
   border-radius: 3px 3px 0 0;
     border-bottom: 1px solid black;
 }
@@ -3202,9 +3250,9 @@ section {
 .tabs_main input:checked + label {
   color: white;
   border: 1px solid #0085c1;
-  border-top: 0px solid #0085c1;
-  border-bottom: 1px solid #0085c1;
-  background: #0085c1;
+  border-top: 2px solid #0085c1;
+  border-bottom: 1px solid rgba(0, 133, 193, 0);
+  background: rgba(0, 133, 193, 0.34);
 }
 /* активация секций с помощью переключателя :checked */
 #tab1:checked ~ #content1,
@@ -3231,3 +3279,51 @@ section {
     padding: 15px;
   }
 }
+
+
+.selectors{
+	  border: 1px solid rgb(231, 231, 231);
+  border-radius: 2px;
+  padding: 3px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  color: #0085c1;
+     width: 96%;
+
+ }
+.selectors tbody tr{
+	padding: 5px;
+	margin: 5px;
+}
+
+.selectors tbody td{
+	padding: 0px;
+}
+
+.switched{
+    cursor: pointer;
+    color: white;
+    padding: 3px 8px;
+    border: 1px solid #0087b8;
+    /* background: url(/bitrix/templates/main_template/./images/button2.gif) repeat-x 0 0; */
+    z-index: 0;
+    border-radius: 2px;
+}
+
+    .selectors_switch{
+	border-radius: 5px;
+    border: 1px solid #007ab0;
+    width: 80px;
+    /* margin: 5px; */
+    padding: 5px;
+    padding-bottom: 1px;
+    align-content: center;
+    /* background-color: #229BC7; */
+    background: #007ab0 url(./images/button2.gif) repeat-x 0 0;
+
+}
+
+
+
+
+

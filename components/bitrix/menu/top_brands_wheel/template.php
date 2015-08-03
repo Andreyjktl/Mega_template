@@ -6,9 +6,10 @@
 ?>
 <?if (!empty($arResult)):?>
 <div class="submenu2">
-<a href="http://мега.онлайн/wheels/podbor-diskov.php"><h4>Подбор дисков</h4></a>
+<a href="<?=SITE_DIR?>wheels/podbor-diskov.php"><h4>Подбор дисков</h4></a>
 <hr>
-<h4>Производители дисков</h4>
+
+<a href="<?=SITE_DIR?>wheels"><h4>Производители дисков</h4></a>
     <div class="table">
     
 <?

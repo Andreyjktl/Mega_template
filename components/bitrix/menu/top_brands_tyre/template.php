@@ -6,9 +6,9 @@
 ?>
 <?if (!empty($arResult)):?>
 <div class="submenu2">
-<a href="http://мега.онлайн/tyres/podbor-shin.php"><h4>Подбор Шин</h4></a>
+<a href="<?=SITE_DIR?>tyres/podbor-shin.php"><h4>Подбор Шин</h4></a>
 <hr>
-<h4>Производители шин</h4>
+<a href="<?=SITE_DIR?>tyres"><h4>Производители шин</h4></a>
     <div class="table">
 <?
 $cnt = count($arResult);

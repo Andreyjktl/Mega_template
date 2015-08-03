@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
 <?if(count($arResult["ITEMS"])>0){?>
 <div class="catalog">
-    <div class="overflow">
+    <div class="overflow_left">
         <table class="catalog">
     <?foreach($arResult["ITEMS"] as $arLine):?>
             <?

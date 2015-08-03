@@ -76,6 +76,7 @@ div.bottom-block {
 	border-top-color: #bebebe;
 	border-bottom-color: #bebebe;
 	color: #303030;
+	background: url(./images/blue_bg_1920.png) repeat-x 0 0;
 }
 div.bottom-block div.brd {
 	border-top-color: #bebebe;
@@ -132,3 +133,4 @@ table.list tr th {
 table.list tr td {
 	border-bottom-color: #d1dadf;
 }
+

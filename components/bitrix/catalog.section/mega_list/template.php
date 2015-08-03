@@ -12,13 +12,14 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
+
 <div class="catalog-section">
 <?if($arParams["DISPLAY_TOP_PAGER"]):?>
 	<p><?=$arResult["NAV_STRING"]?></p>
 <?endif?>
 <table class="data-table" cellspacing="0" cellpadding="0" border="0" width="100%">
 
-<?/*ÿ‡ÔÍ‡*/?>
+<?/*√ò√†√Ø√™√†*/?>
 	<thead style="border:2px ">
 	<tr>
 		<td><?=GetMessage("CATALOG_TITLE")?></td>
@@ -27,37 +28,44 @@ $this->setFrameMode(true);
 				<td><?=$arProperty["NAME"]?></td>
 			<?endforeach;
 		endif;*/?>
-		<?/*÷ÂÌ‡*/?>
+		<?/*√ñ√•√≠√†*/?>
 		<?foreach($arResult["PRICES"] as $code=>$arPrice):?>
-			<td><p>÷ÂÌ‡</p></td>
+			<td><p>√ñ√•√≠√†</p></td>
 		<?endforeach?>
 		
-		<?/* ÓÎË˜ÂÒÚ‚Ó*/?>
+		<?/*√ä√Æ√´√®√∑√•√±√≤√¢√Æ*/?>
 		
 			<td>&nbsp;</td>
 		
 
-		<?/*«‡Í‡Á*/?>
+		<?/*√á√†√™√†√ß*/?>
 		<?if(count($arResult["PRICES"]) > 0):?>
 			<td>&nbsp;</td>
 		<?endif?>
 	</tr>
 	</thead>
 
-<?/*“ÂÎÓ*/?>
+<?/*√í√•√´√Æ*/?>
+
 
 	<?foreach($arResult["ITEMS"] as $arElement):?>
+	<?// echo "<pre>";  print_r($arElement); echo "</pre>"; ?>
 	<?
 	$this->AddEditAction($arElement['ID'], $arElement['EDIT_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_EDIT"));
 	$this->AddDeleteAction($arElement['ID'], $arElement['DELETE_LINK'], CIBlock::GetArrayByID($arParams["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BCS_ELEMENT_DELETE_CONFIRM')));
 	?>
 	<tr id="<?=$this->GetEditAreaId($arElement['ID']);?>">
 		<td>
-			<a href="<?=$arElement["DETAIL_PAGE_URL"]?>"><?=$arElement["NAME"]?></a>
+			<a href="<?=$arElement["DETAIL_PAGE_URL"]?>">
+			<?=$arElement["NAME"]?>
+
+				
+
+			</a>
 			<?if(count($arElement["SECTION"]["PATH"])>0):?>
 				<br />
 
-				<?/*Õ‡ËÏÂÌÓ‚‡ÌËÂ*/?>
+				<?/*√ç√†√®√¨√•√≠√Æ√¢√†√≠√®√•*/?>
 				<?foreach($arElement["SECTION"]["PATH"] as $arPath):?>
 					/ <a href="<?=$arPath["SECTION_PAGE_URL"]?>"><?=$arPath["NAME"]?></a>
 				<?endforeach?>
@@ -76,7 +84,7 @@ $this->setFrameMode(true);
 		<?endforeach?>
 		*/?>
 
-		<?/*÷ÂÌ‡*/?>
+		<?/*√ñ√•√≠√†*/?>
 		<?foreach($arResult["PRICES"] as $code=>$arPrice):?>
 		<td>
 			<?if($arPrice = $arElement["PRICES"][$code]):?>
@@ -90,7 +98,7 @@ $this->setFrameMode(true);
 			<?endif;?>
 		</td>
 
-		<?/* ÓÎË˜ÂÒÚ‚Ó*/?>
+		<?/*√ä√Æ√´√®√∑√•√±√≤√¢√Æ*/?>
 		<td>
 		<?if($arElement['CATALOG_QUANTITY'] < 1):?>
                     <span class="catalog-price"><?=$arPrice["PRINT_VALUE"]?></span>
@@ -98,7 +106,7 @@ $this->setFrameMode(true);
 		
 		</td>
 
-		<?/*«‡Í‡Á*/?>
+		<?/*√á√†√™√†√ß*/?>
 		<?endforeach;?>
 		<?if(count($arResult["PRICES"]) > 0):?>
 		<td>
